@@ -9,8 +9,15 @@ import { Filter } from "@components/Filter";
 import { PlayerCard } from "@components/PlayerCard";
 import ListEmpty from "@components/ListEmpty";
 import { Button } from "@components/Button";
+import { useRoute } from "@react-navigation/native";
+
+type RouteParams = {
+  group: string;
+};
 
 export function NewPlayers() {
+  const route = useRoute();
+  const { group } = route.params as RouteParams;
   const [teamsList, setTeamsList] = useState(["Time A", "Time B", "Time C"]);
   const [currentTeam, setCurrentTeam] = useState("Time A");
   const [players, setPlayers] = useState(["Marcus", "Aninha"]);
@@ -19,10 +26,7 @@ export function NewPlayers() {
     <S.Container>
       <Header showBackButton />
 
-      <Highlight
-        title="Nome da turma"
-        subtitle="Adicione a galera e separe os times"
-      />
+      <Highlight title={group} subtitle="Adicione a galera e separe os times" />
 
       <S.Form>
         <Input placeholder="Nome da pessoa" autoCorrect={false} />
