@@ -11,6 +11,7 @@ This application is a mobile app that I made as part of the Ignite Course, an on
 - Create and delete groups;
 - Populate groups with users;
 - Create and delete users in those groups;
+- Save data localy device with Async Storage;
 
 ## Built with
 
